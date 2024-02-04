@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Set placeholder</title>
+	<style>
+		body {
+			align-items: center;
+			background-color: #efefef;
+			display: flex;
+			font-family: system-ui, sans-serif;
+			justify-content: center;
+		}
+
+		#loading {
+			color: #282828;
+		}
+
+		#error {
+			color: #ff2222;
+		}
+	</style>
+</head>
+
+<body>
+	<span id="loading">Loading...</span>
+	<span id="error"></span>
+
+	<script>
+		window.onmessage = event => {
+			const message = event.data.pluginMessage
+			if (message.type === "error") {
+				document.getElementById("error").textContent = message.error
+				document.getElementById("loading").style.display = "none"
+			}
+		}
+	</script>
+</body>
+
+</html>
