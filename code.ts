@@ -1,4 +1,4 @@
-figma.showUI(__html__)
+figma.showUI(__html__, { themeColors: true })
 
 const clone = (value: readonly Paint[] | typeof figma.mixed) => JSON.parse(JSON.stringify(value))
 
